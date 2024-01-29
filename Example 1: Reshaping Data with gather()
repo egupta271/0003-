@@ -1,0 +1,21 @@
+# Load tidyr
+library(tidyr)
+
+# Create a sample data frame
+data_long <- data.frame(
+  ID = c(1, 2, 3),
+  Day1 = c(10, 15, 20),
+  Day2 = c(12, 18, 22),
+  Day3 = c(14, 20, 25)
+)
+
+# Original Data
+print("Original Data:")
+print(data_long)
+
+# Reshape data from wide to long
+data_long <- gather(data_long, key = "Day", value = "Value", -ID)
+
+# Tidied Data
+print("Tidied Data:")
+print(data_long)
